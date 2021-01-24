@@ -1,0 +1,13 @@
+1、git配置文件地址
+    C:\Users\ck\.gitconfig
+2、删除vuecli3保存的创建信息
+    C:\Users\ck\.gitconfig\.vuerc
+3、vuecli3
+    public文件夹相当于static文件夹，里面的文件会原封不动的打包到dist文件夹
+   vuecli2
+    static文件夹里面的东西会原封不动的打包到dist文件夹中
+    src/assets文件夹里面的图片会根据配置的大小改变
+4、修改webpack配置需要新建vue.config.js文件，在js文件里修改配置项
+    module.exports = {
+        
+    }
