@@ -1,0 +1,15 @@
+1、找到npm-cache文件夹删除
+    C:\Users\ck\AppData\Roaming\npm-cach
+2、eslint关闭
+    01_vuecli2test\config\index.js
+    useEslint: false  设置为false,关闭eslint
+3、render函数使用
+    createElement('标签', {标签的属性}, ['标签内容'])
+    new Vue({
+        el: '#app',
+        render: function(createElement) {
+            return createElement('div',
+                {class: 'box'}, 
+                ['div内容', createElement('button', ['按钮'])])
+        }
+    })

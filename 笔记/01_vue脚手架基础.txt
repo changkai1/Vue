@@ -1,5 +1,0 @@
-1、找到npm-cache文件夹删除
-    C:\Users\ck\AppData\Roaming\npm-cach
-2、eslint关闭
-    01_vuecli2test\config\index.js
-    useEslint: false  设置为false,关闭eslint
