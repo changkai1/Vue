@@ -1,23 +1,44 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
-  </div>
+    <div id="app">
+      <!-- 
+          <router-link></router-link>属性
+            to: 路由跳转
+            tag: 'button' 渲染成什么标签
+            replace: 后退键不能返回到上一个页面中，不会留下history记录
+            active-class: 路由选中时的class名
+       -->
+      <!-- 
+          <router-link to="/home" tag="button" replace active-class="active">首页</router-link>
+          <router-link to="/about" tag="button" replace active-class="active">关于</router-link>
+       -->
+        
+        <!-- <router-link to="/home" tag="button" replace>首页</router-link>
+        <router-link to="/about" tag="button" replace>关于</router-link> -->
+
+        <button @click="home">首页</button>
+        <button @click="about">关于</button>
+        <router-view></router-view>
+    </div>
 </template>
 
 <script>
 export default {
-  name: 'App'
+    name: 'App',
+    methods: {
+        home () {
+            // this.$router.push('/home')
+            this.$router.replace('/home')
+        },
+        about () {
+            // this.$router.push('/about')
+            this.$router.replace('/about')
+        }
+    }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.router-link-active {
+  color: red;
 }
 </style>
