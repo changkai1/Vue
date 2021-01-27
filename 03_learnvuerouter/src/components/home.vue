@@ -10,7 +10,18 @@
 
 <script>
 export default {
-    name: 'home'
+    name: 'home',
+    data () {
+        return {
+            name: 'home'
+        }
+    },
+    // 组件内守卫
+    beforeRouteEnter: (to, from, next) => {
+        next(vm => {
+            console.log(vm.name)
+        })
+    }
 }
 </script>
 
