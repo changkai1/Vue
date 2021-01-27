@@ -14,7 +14,24 @@ const routes = [
     {
         path: '/home',
         name: 'home',
-        component: () => import ('../components/home.vue')
+        component: () => import ('../components/home.vue'),
+        // 路由嵌套
+        children: [
+            {
+                path: '',
+                redirect: 'news'
+            },
+            {
+                path: 'news',
+                name: 'homeNews',
+                component: () => import ('../components/homeNews.vue')
+            },
+            {
+                path: 'message',
+                name: 'homeMessage',
+                component: () => import ('../components/homeMessage.vue')
+            }
+        ]
     },
     {
         path: '/about',
