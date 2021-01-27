@@ -20,6 +20,12 @@ const routes = [
         path: '/about',
         name: 'about',
         component: () => import ('../components/about.vue')
+    },
+    // 动态路由
+    {
+        path: '/user/:userId',
+        name: 'user',
+        component: () => import ('../components/user.vue')
     }
 ]
 const router = new VueRouter({

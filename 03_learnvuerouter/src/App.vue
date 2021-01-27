@@ -17,6 +17,7 @@
 
         <button @click="home">首页</button>
         <button @click="about">关于</button>
+        <router-link :to="'/user/' + userId" tag="button">用户</router-link>
         <router-view></router-view>
     </div>
 </template>
@@ -24,6 +25,11 @@
 <script>
 export default {
     name: 'App',
+    data () {
+        return {
+            userId: 'zhangsan'
+        }
+    },
     methods: {
         home () {
             // this.$router.push('/home')
