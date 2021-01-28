@@ -21,10 +21,6 @@ const routes = [
         // 路由嵌套
         children: [
             {
-                path: '',
-                redirect: 'news',
-            },
-            {
                 path: 'news',
                 name: 'homeNews',
                 meta: {
@@ -50,8 +46,8 @@ const routes = [
         },
         // 路由独享守卫
         beforeEnter: (to, from, next) => {
-            console.log('路由独享守卫to', to)
-            console.log('路由独享守卫from', from)
+            // console.log('路由独享守卫to', to)
+            // console.log('路由独享守卫from', from)
             next()
         },
         component: () => import ('../components/about.vue')
@@ -82,7 +78,7 @@ router.beforeEach((to, from, next) => {
 })
 // 后置守卫
 router.afterEach((to, from) => {
-    console.log('to', to)
-    console.log('from', from)
+    // console.log('to', to)
+    // console.log('from', from)
 })
 export default router

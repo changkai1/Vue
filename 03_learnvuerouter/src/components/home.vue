@@ -13,14 +13,34 @@ export default {
     name: 'home',
     data () {
         return {
-            name: 'home'
+            name: 'home',
+            path: '/home/news'
         }
     },
+    created () {
+        console.log('created')
+    },
+    destroyed () {
+        console.log('destroyed')
+    },
     // 组件内守卫
-    beforeRouteEnter: (to, from, next) => {
+    beforeRouterEnter (to, from, next) {
         next(vm => {
-            console.log(vm.name)
+            // console.log(vm.name)
         })
+    },
+    beforeRouteLeave (to, from, next) {
+        // console.log('home to', to)
+        // console.log('home from', from)
+        this.path = from.path
+        next()
+    },
+    activated () {
+        console.log("home activated")
+        this.$router.push(this.path)
+    },
+    deactivated () {
+        console.log('home deactivated')
     }
 }
 </script>

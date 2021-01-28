@@ -18,7 +18,10 @@
         <button @click="home">首页</button>
         <button @click="about">关于</button>
         <router-link :to="'/user/' + userId" tag="button">用户</router-link>
-        <router-view></router-view>
+        <keep-alive>
+            <router-view></router-view>
+        </keep-alive>
+        <!-- <router-view></router-view> -->
     </div>
 </template>
 
