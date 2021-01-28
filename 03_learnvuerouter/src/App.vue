@@ -18,7 +18,13 @@
         <button @click="home">首页</button>
         <button @click="about">关于</button>
         <router-link :to="'/user/' + userId" tag="button">用户</router-link>
-        <keep-alive>
+        <!-- 
+            keep-alive两个属性
+            include: 字符串或正则表达式，匹配到的组件会被缓存
+            exclude: 字符串或正则表达式，匹配到的组件不会被缓存
+         -->
+         <!-- 用户组件不缓存，获取用户组件的name值写在此处,如果有多个不被缓存，中间不能加空格 -->
+        <keep-alive exclude="user">
             <router-view></router-view>
         </keep-alive>
         <!-- <router-view></router-view> -->

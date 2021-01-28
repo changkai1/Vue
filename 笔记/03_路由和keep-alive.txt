@@ -69,6 +69,24 @@
         // 导航离开该组件的对应路由时调用
         // 可以访问组件实例 `this`
     }
+8、keep-alive  
+    8.1、在首页消息跳转到别的页面，在跳转回来时显示消息页面 
+        home.vue里使用activated和beforeRouteLeave实现
+        使用keep-alive时会执行 activated 和 deactivated 两个函数
+        activated () {
+
+        },
+        deactivated () {
+
+        }
+    8.2、keep-alive两个属性
+            include: 字符串或正则表达式，匹配到的组件会被缓存
+            exclude: 字符串或正则表达式，匹配到的组件不会被缓存
+            <!-- 用户组件不缓存，获取用户组件的name值写在此处,如果有多个不被缓存，中间不能加空格 -->
+            <keep-alive exclude="user,home">
+                <router-view></router-view>
+            </keep-alive>
+
 
 
 

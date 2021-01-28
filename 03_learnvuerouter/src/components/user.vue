@@ -7,7 +7,13 @@
 
 <script>
 export default {
-    name: 'user'
+    name: 'user',
+    created () {
+        console.log('created')
+    },
+    destroyed () {
+        console.log('destory')
+    }
 }
 </script>
 
